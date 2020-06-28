@@ -1,12 +1,12 @@
-# Space Kitten
+# MOODY
 
-> Pithy project description
+> Music plat form
 
 ## Team
 
-  - __Product Owner__: space cat
-  - __Scrum Master__: space cat
-  - __Development Team Members__: space cat, space cat
+  - __Product Owner__: Maria al Qura'n
+  - __Scrum Master__: Toleen Ballol
+  - __Development Team Members__: Sara Al Nemer, Ethar Al Otoom
 
 ## Table of Contents
 
