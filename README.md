@@ -1,6 +1,6 @@
 # MOODY
 
-> Music plat form
+> Music platform
 
 ## Team
 
