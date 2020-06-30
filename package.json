@@ -1,5 +1,5 @@
 {
-  "name": "tsem-group4-",
+  "name": "clear",
   "version": "1.0.0",
   "description": "> Pithy project description",
   "main": "index.js",
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/TSEM-group4/TSEM-group4-/issues"
   },
-  "homepage": "https://github.com/TSEM-group4/TSEM-group4-#readme"
+  "homepage": "https://github.com/TSEM-group4/TSEM-group4-#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "mongoose": "^5.9.20"
+  }
 }
