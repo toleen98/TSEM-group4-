@@ -4,6 +4,7 @@
 
 ## Team
 
+
   - __Product Owner__: Maria Al Qura'an
   - __Scrum Master__: Toleen Ballol
   - __Development Team Members__: Sara Al Nemer, Eithar Otum
