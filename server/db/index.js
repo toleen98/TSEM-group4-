@@ -8,17 +8,28 @@ import axios from "axios";
 
 
 var SongsSchema = new Schema({ //songs schema 
-    id:Schema.ObjectId
+    id:Schema.Types.ObjectId,
     name:String,
     category:String,
     coverPhoto:String,
     moodDescription:String,
     singer:String
 })
+//check for git hup push
+var UserSchema = new Schema ({//user Schema
+ id:Schema.Types.ObjectId,
+ userName:String,
+ email:String,
+ password:String,
+ name:String,
+ lastName:String,
+ uploads:
+ age:Number,
+ gender:String
+})
 
-
-module.export = mongoose.model(song,SongsSchema);//export our songsshema so we can use it in our files 
-
+module.export = mongoose.model(song,SongsSchema);//export our SongsShema so we can use it in our files 
+module.export = mongoose.model(user,UserSchema); //export our UserShema so we can use it in our files
 
 
 
@@ -27,16 +38,16 @@ let save = (songs) => {
   //save the songs to the database
 
     var name = songs[i].name;
-    var category = songs[i].category;
-    var coverPhoto = songs[i].coverPhoto;
-    var moodDescription = songs[i].moodDescription;
+    //var category = songs[i].category;
+    //var coverPhoto = songs[i].coverPhoto;
+    //var moodDescription = songs[i].moodDescription;
     var singer = songs[i].singer;
 
     var songss = new song({
       name :  name,
-      category : category,
-      coverPhoto : coverPhoto,
-      moodDescription : moodDescription,
+     // category : category,
+     // coverPhoto : coverPhoto,
+      //moodDescription : moodDescription,
       singer : singer
 
     });
