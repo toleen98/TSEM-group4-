@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import axios from 'axios'
+
+
 
 class Signup extends Component {
     constructor(props) {
@@ -15,14 +19,14 @@ class Signup extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     } 
 
-    handleChange (event) {
+    handleChange = event => {
         const {name, value} = event.target
         this.setState({
           [name]: value
         })    
       }
 
-    handleSubmit( e) {
+    handleSubmit =  e => {
         e.preventDefault();
     
         const newUser = {
@@ -34,17 +38,23 @@ class Signup extends Component {
           errors:this.state.errors
         };
 
-        return fetch('http://localhost:3000/signup', {
-            method: 'POST',
-            body: JSON.stringify(newUser),
-            headers: {
-                'Content-Type': 'application/json'
-            },
+        console.log(newUser)
+        axios.post('http://localhost:5000/signup',newUser)
+        .then(function (response) {
+          console.log(response);
+          
         })
-        .then(res => res.json())
-        .then(data => console.log(data));
+        // fetch('http://localhost:5000/signup', {
+        //     method: 'POST',
+        //     body: JSON.stringify(newUser),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        // })
+        // .then(res => res.json())
+        // .then(data => console.log(data));
+    
     }
-
 
     render() {
     return (
@@ -67,7 +77,7 @@ class Signup extends Component {
             <input type="password"  name="confirmPassword" placeholder="Confirm Password" value={this.state.confirmPassword} onChange={this.handleChange} required />
             <br />
          
-            <input type="submit" value="Sign Up" />         
+         <input type="submit" value="Sign Up" />         
              </form>
         </div>
       </div>
