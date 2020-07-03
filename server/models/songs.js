@@ -9,9 +9,9 @@ const sadSongSchema = new Schema({
   url:String
 });
 
-const Sad = mongoose.model("Sad", sadSongSchema);
+const sad = mongoose.model("Sad", sadSongSchema);
 
-module.exports =  Sad;
+module.exports =  sad;
 // module.exports.happy =  mongoose.model("happy", songsSchema);
 // module.exports.romantic =  mongoose.model("romantic", songsSchema);
 // module.exports.sarcastic =  mongoose.model("sarcastic", songsSchema);

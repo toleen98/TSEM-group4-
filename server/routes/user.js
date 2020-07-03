@@ -3,6 +3,14 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
+// const uri = "mongodb+srv://Sara-Agha-Alnimer:TMGUY54ZkKH7vne6@moody.96orc.mongodb.net/moody?retryWrites=true&w=majority"
+// mongoose.connect(uri /* || "mongodb://localhost/moody "*/,
+//   { useNewUrlParser: true,
+//   useUnifiedTopology: true }
+// );
+
+// const db = mongoose.connection;
+
 const User = require('../models/user')
 // const validateInput = require("../../validation/register")
 
@@ -55,6 +63,23 @@ router.post("/login",function (req, res) {
     
   });
 });
+
+//require songs model 
+// const sad = require('../models/songs');
+
+// router.get("/sad",function(req, res) {
+//   sad.find({},(err,songs) => { 
+//     if (err) {
+//       console.log(err)
+      
+//     }
+//     console.log(songs)
+//     return res.json(songs)
+//   });
+//   console.log("hello")
+//   // res.json("hello")
+// });
+
 
 
 module.exports = router;
