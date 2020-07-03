@@ -6,9 +6,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user')
 // const validateInput = require("../../validation/register")
 
-router.post('/signup', (req,res) => {
-   
-    
+router.post('/signup', (req,res) => {  
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
       return res.status(400).json({ email: "Email already exists" });
@@ -43,26 +41,17 @@ router.post("/login",function (req, res) {
   const email = req.body.email;
   const password = req.body.password;
   // Find user by email
-  User.findOne({ email }).then(user => {
+  User.findOne({ email, password }).then(user => {
     // Check if user exists
     if (!user) {
       return res.status(404).json({ emailnotfound: "Email not found" });
     }
     console.log(user)
-    // Check password
-    User.findOne({ "email":email, "password":password }, "password").then(pass => {
-      // bcrypt.compare(password,pass).then(isMatch => {
-      //   if (isMatch) {
-      //     //  matched
-      //     return res.json({exist : true})
-      //   }
-      //   else {
-      //     return res.json("isvalid :false")
-      //   }
-      // }); 
-      console.log(pass);
+   
+    
+      console.log(user);
       return res.json({exist : true})
-    })
+  
     
   });
 });

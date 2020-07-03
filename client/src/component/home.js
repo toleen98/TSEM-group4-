@@ -1,10 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Sad from './subs/sad';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      moods: ["sad", "happy", "work", "study", "mad", "Sleep"],
+      moods: [
+        "dark nights",
+        "feeling alive",
+        "feeling calm",
+        "first real date",
+        "sarcastic ",
+        "Tarab mood",
+      ],
     };
   }
 
@@ -21,7 +30,10 @@ class Home extends Component {
 
         {/* i used map to iterate over the elements to put each element in a button and li */}
 
-        <ul>
+        {this.state.moods.forEach((element) => {})}
+
+        {/* <ul>
+        
           {this.state.moods.map((mood) => (
             <li key={mood} className="moods">
               <button id="mood" onClick={this.handel}>
@@ -29,15 +41,13 @@ class Home extends Component {
               </button>
             </li>
           ))}
-        </ul>
-
-        <button id="cm">Commuinty Moods</button>
-
-        {/* the footer part  */}
-        <footer>
-          <a>about us</a>
-          <a>contact us</a>
-        </footer>
+        </ul> */}
+        <button className="cm">
+          <Link to="/mood">Mood</Link>
+        </button>
+        <button className="cm">
+          <Link to="/commuinty">communty moods</Link>
+        </button>
       </React.Fragment>
     );
   }

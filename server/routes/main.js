@@ -88,14 +88,18 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 //require songs model 
-const Song = require('../models/songs');
+const sad = require('../models/songs');
 
 router.get("/sad",function(req, res) {
-  Song.sad.find({}).then(songs => { 
-    if (songs) {
-      return res.json(songs)
+  sad.find({},(err,songs) => { 
+    if (err) {
+      console.log(err)
+      
     }
+    console.log(songs)
+    return res.json(songs)
+  });
+});
 
-  })
+module.exports = router;
 
-})

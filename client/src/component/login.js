@@ -31,6 +31,7 @@ class Login extends Component {
         axios.post('http://localhost:5000/login',user)
         .then(function (response) {
           console.log(response);
+          // window.location = "/home"
         })
         
     

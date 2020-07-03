@@ -1,15 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Connect to MongoDB
-mongoose
-  .connect(
-    "mongodb://localhost/moody",
-    { useNewUrlParser: true }
-  )
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
-
 // Create Schema
 const UserSchema = new Schema({
   firstName: {
@@ -29,7 +20,6 @@ const UserSchema = new Schema({
     required: true
   }
 });
-
 
 
 module.exports =  mongoose.model("User", UserSchema);
