@@ -15,10 +15,12 @@ class Signup extends Component {
             confirmPassword: "",
             errors: {}
         };
+        
         this.handleChange=this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     } 
 
+    
     handleChange = event => {
         const {name, value} = event.target
         this.setState({
@@ -42,19 +44,13 @@ class Signup extends Component {
         axios.post('http://localhost:5000/signup',newUser)
         .then(function (response) {
           console.log(response);
+
+          // if (response.status === 200) {
+          //   this.props.handleSuccessfulAuth(response.data);
+          // }
           
         })
-        // fetch('http://localhost:5000/signup', {
-        //     method: 'POST',
-        //     body: JSON.stringify(newUser),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // })
-        // .then(res => res.json())
-        // .then(data => console.log(data));
-    
-    }
+      }
 
     render() {
     return (

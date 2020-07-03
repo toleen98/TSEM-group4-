@@ -7,31 +7,36 @@ import Home from "./home";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       // for auth
       loggedInStatus: "NOT_LOGGED_IN",
       user: {}
     };
+    // this.handleLogin = this.handleLogin.bind(this);
+    // this.handleLogout = this.handleLogout.bind(this);
+    this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
 
-    this.handleLogin = this.handleLogin.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
   }
 
+  handleSuccessfulAuth(data) {
+    this.props.history.push("/home");
+  }
   render() {
     return (
+      
       <Router>
         <div>
           <Nav />
+          
           <Route 
             path="/" 
             exact
             render={props => (
                 <Home
                   {...props}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
+                
                   loggedInStatus={this.state.loggedInStatus}
                 />
               )}
@@ -42,7 +47,13 @@ class App extends Component {
                   loggedInStatus={this.state.loggedInStatus}
                 />
               )} />
-          <Route path="/signup" component={Signup} />
+          <Route path="/signup" render={props => (
+                <Signup
+                  {...props}
+                  loggedInStatus={this.state.loggedInStatus}
+                  handleSuccessfulAuth = {this.handleSuccessfulAuth}
+                />
+              )} />
         </div>
       </Router>
     );
