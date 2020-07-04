@@ -3,20 +3,48 @@ const Schema = mongoose.Schema;
 
 
 // Create Schema
-const sadSongSchema = new Schema({
-  song:String,
-  singer:String,
-  url:String
+const songSchema = new Schema({
+ sad: [
+   {
+   song:String,
+   singer:String,
+   url:String
+  }],
+  happy: [
+    {
+    song:String,
+    singer:String,
+    url:String
+   }],
+   romantic: [
+    {
+    song:String,
+    singer:String,
+    url:String
+  }],
+  tarab: [
+    {
+    song:String,
+    singer:String,
+    url:String
+  }],
+  sarcastic: [
+    {
+    song:String,
+    singer:String,
+    url:String
+  }],
+  workout: [
+    {
+    song:String,
+    singer:String,
+    url:String
+  }]
 });
 
-const sad = mongoose.model("Sad", sadSongSchema);
+const Song = mongoose.model("Song", songSchema);
 
-module.exports =  sad;
-// module.exports.happy =  mongoose.model("happy", songsSchema);
-// module.exports.romantic =  mongoose.model("romantic", songsSchema);
-// module.exports.sarcastic =  mongoose.model("sarcastic", songsSchema);
-// module.exports.tarab =  mongoose.model("tarab", songsSchema);
-// module.exports.workout =  mongoose.model("workout", songsSchema);
+module.exports =  Song;
 
 
 

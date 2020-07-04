@@ -11,7 +11,7 @@ app.use(cors());
 
 //routs path
 const users = require("./routes/user");
-// const sad = require("./routes/main");
+const songs = require("./routes/main");
 const { Mongoose } = require("mongoose");
 
 // Connect to MongoDB
@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 
 //use routs for the site
 app.use("",users);
-// app.use("",sad)
+app.use("",songs)
 
 
 var port = 5000;
@@ -42,3 +42,5 @@ var port = 5000;
 app.listen(port, function () {
   console.log(' listening on port ' + port);
 });
+
+

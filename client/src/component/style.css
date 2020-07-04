@@ -1,12 +1,15 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+  background-image: url("bg2.jpg");
+  background-repeat: no-repeat;
 }
 
 /* to style the mood buttons that will appear in the main page    */
 
-#mood {
-  background-color: rgb(150, 4, 65);
+.mood {
+  background-color: rgb(151, 221, 218);
+  opacity: 0.85;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -17,6 +20,10 @@ body {
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 35%;
+  bottom: 30%;
 }
 
 /* to style the list of moods buttons  */
@@ -39,6 +46,7 @@ footer {
   background-color: rgb(199, 191, 191);
   color: rgb(0, 0, 0);
   text-align: center;
+  opacity: 0.75;
 }
 footer a {
   float: right;
@@ -49,6 +57,7 @@ header {
   overflow: hidden;
   background-color: #f1f1f1;
   padding: 10px 10px;
+  opacity: 0.5;
 }
 
 header a.logo {
@@ -73,14 +82,18 @@ a {
 }
 
 a:hover {
-  background-color: rgb(151, 221, 218);
+  background-color: blueviolet;
+}
+.mood:hover {
+  background-color: blueviolet;
 }
 
-.cm {
-  background-color: rgb(150, 4, 65);
+#cm {
+  background-color: rgb(151, 221, 218);
+  opacity: 0.85;
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 24px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -88,8 +101,17 @@ a:hover {
   margin: 100px;
   transition-duration: 0.4s;
   cursor: pointer;
+  position: relative;
+  top: 70%;
+  left: 35%;
 }
 
 #cm:hover {
   background-color: rgb(8, 99, 94);
+}
+
+#welcoming {
+  position: relative;
+  top: 60%;
+  left: 48%;
 }
