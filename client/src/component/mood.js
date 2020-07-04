@@ -11,13 +11,16 @@ class Mood extends Component {
   } 
 
   componentDidMount () {
-    // axios.get('http://localhost:5000/sad')
-    //     .then(function (response) {
-    //       // the response is an array of songs
-    //       this.setState({
-    //         songs:response
-    //       })  
-    //     })
+    var that = this
+    axios.get('http://localhost:5000/sad')
+        .then(function (response) {
+          // the response is an array of songs
+          that.setState({
+            "songs":response.data
+          })  
+          console.log(that.state.songs)
+        }).catch(function (error) {
+          console.log(error);})
   }
 
   render() {
